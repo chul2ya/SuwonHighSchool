@@ -1,0 +1,25 @@
+3 Space kit https://assetstore.unity.com/packages/2d/environments/2d-space-kit-27662
+
+12 Top Down river https://assetstore.unity.com/packages/2d/textures-materials/top-down-river-environment-86692
+
+24 space background https://assetstore.unity.com/packages/2d/environments/2d-space-backgrounds-39148
+
+29 laser and beaaaaaaaaaaaaaaaaaaaaaam https://opengameart.org/content/lasers-and-beams
+
+36 fantastic space background https://opengameart.org/content/starfields-and-couple-of-space-backgrounds
+
+39 Bullet https://opengameart.org/content/bullet-collection-1-m484
+
+41 pixel space art pack https://opengameart.org/content/space-ship-shooter-pixel-art-assets
+
+52 explosion https://opengameart.org/content/explosions-0
+
+54 shield https://opengameart.org/content/shield-effect
+
+111 Simple UI https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276
+
+114 Button https://assetstore.unity.com/packages/2d/gui/icons/371-simple-buttons-pack-97516
+
+120 guide UI https://assetstore.unity.com/packages/2d/gui/icons/controller-icon-pack-128505
+
+
