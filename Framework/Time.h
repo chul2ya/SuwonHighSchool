@@ -1,9 +1,7 @@
 #pragma once
-class Time
+class Time : public SingleInstance<Time>
 {
 private:
-	static Time* inst;
-
 	int tempFPS = 0;
 	DWORD prevFPS;
 	DWORD prevTime;
@@ -11,13 +9,6 @@ private:
 public:
 	int FPS = 0;
 	float deltaTime = 0.0f;
-
-	static Time* GetInstance()
-	{
-		if (inst == nullptr)
-			inst = new Time();
-		return inst;
-	}
 
 	void Tick()
 	{
