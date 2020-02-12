@@ -82,3 +82,23 @@ void Sprite::Render()
 	pD3D9Device->SetFVF(Direct3D::GetInstance()->VertexFVF);
 	pD3D9Device->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 4);
 }
+
+float Sprite::GetTextureWidth()
+{
+	return GetRealTextureWidth() * scale.x;
+}
+
+float Sprite::GetTextureHeight()
+{
+	return GetRealTextureHeight() * scale.y;
+}
+
+float Sprite::GetRealTextureWidth()
+{
+	return ptexs[curScene]->Info.Width;
+}
+
+float Sprite::GetRealTextureHeight()
+{
+	return ptexs[curScene]->Info.Height;
+}

@@ -2,7 +2,6 @@
 class Scene
 {
 	vector<Object*> addObjects;
-	vector<Object*> collisionObjects;
 	vector<Object*> objects;
 public:
 
@@ -18,22 +17,10 @@ public:
 
 class SceneManager : public SingleInstance<SceneManager>
 {
-private:
-	static SceneManager* inst;
-	SceneManager() {};
-
 	map<string, Scene*> sceneMap;
 
 public:
 	Scene* curScene = nullptr;
-
-	static SceneManager* GetInstance()
-	{
-		if (inst == nullptr)
-			inst = new SceneManager;
-		return inst;
-	}
-
 
 	void AddScene(string name, Scene * scene) 
 	{

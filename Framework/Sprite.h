@@ -26,6 +26,9 @@ public:
 	void Update(float deltaTime);
 	void Render();
 
-
+	float GetTextureWidth();
+	float GetTextureHeight();
+	float GetRealTextureWidth();
+	float GetRealTextureHeight();
 };
 
