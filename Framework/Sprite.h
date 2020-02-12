@@ -3,6 +3,8 @@
 class Sprite
 {
 public:
+
+	// 이 코드는 이러한 뜻을 가지고 설계되었습니다.
 	vector<Texture*> ptexs;
 	DWORD color = 0xffffffff;
 	int a = 255, r = 255, g = 255, b = 255;
