@@ -8,6 +8,9 @@ private:
 	DWORD prevFPS;
 	DWORD prevTime;
 
+	//Ãß°¡µÊ
+	//extra2
+
 public:
 	int FPS = 0;
 	float deltaTime = 0.0f;
