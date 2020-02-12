@@ -1,21 +1,9 @@
 #pragma once
 
 
-struct Direct3D
+struct Direct3D : public SingleInstance<Direct3D>
 {
-private:
-	static Direct3D* inst;
-	Direct3D();
-
 public:
-	static Direct3D* GetInstance() 
-	{
-		if (!inst)
-			inst = new Direct3D();
-
-		return inst;
-	}
-
 	struct Vertex
 	{
 		D3DXVECTOR3 pos;

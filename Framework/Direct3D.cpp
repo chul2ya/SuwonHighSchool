@@ -1,12 +1,5 @@
 #include "pch.h"
 
-Direct3D* Direct3D::inst = nullptr;
-
-
-Direct3D::Direct3D() 
-{
-}
-
 bool Direct3D::Initialize(HWND hWnd)
 {
 	pD3D9 = Direct3DCreate9(D3D_SDK_VERSION);

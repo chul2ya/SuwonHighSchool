@@ -1,7 +1,6 @@
 #pragma once
 class Object
 {
-	//오브젝트
 public:
 	D3DXVECTOR2 position = D3DXVECTOR2(0.0f, 0.0f);
 	vector<D3DXVECTOR2> collisionLine;
@@ -16,4 +15,3 @@ public:
 	virtual void SetCollision(Sprite* spr);
 };
 
-// asdf
