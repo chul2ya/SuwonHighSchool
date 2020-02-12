@@ -5,10 +5,6 @@ SceneManager* SceneManager::inst = nullptr;
 void Scene::AddObject(Object * obj)
 {
 	addObjects.push_back(obj);
-	if (dynamic_cast<GameObject*>(obj) != nullptr)
-	{
-		collisionObjects.push_back(static_cast<GameObject*>(obj));
-	}
 }
 
 void Scene::Update(float deltaTime)
@@ -23,22 +19,14 @@ void Scene::Update(float deltaTime)
 
 void Scene::CollisionUpdate(float deltaTime)
 {
-	vector<GameObject*> RoomCollision;
 	for (auto it = collisionObjects.begin(); it != collisionObjects.end(); ++it)
-	{
-		if ((*it)->NowRoom != PlayerManager::GetInstance()->NowRoom)
-			continue;
-		RoomCollision.push_back((*it));
-	}
-
-	for (auto it = RoomCollision.begin(); it != RoomCollision.end(); ++it)
 	{
 		//if ((*it)->collisionLine.size() < 2)
 		//	continue;
 		if ((*it)->isRemove)
 			continue;
 
-		for (auto it2 = it + 1; it2 != RoomCollision.end(); ++it2)
+		for (auto it2 = it + 1; it2 != collisionObjects.end(); ++it2)
 		{
 			//if ((*it2)->collisionLine.size() < 2)
 			//	continue;

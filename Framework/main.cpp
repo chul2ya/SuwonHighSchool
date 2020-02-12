@@ -2,7 +2,6 @@
 
 #include "pch.h"
 
-
 LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 INT WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow) 
@@ -27,7 +26,7 @@ INT WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
 		Direct3D::GetInstance()->screenHeight,
 		NULL, NULL,
 		hInstance,
-		NULL);;;;;;;;;;;;;;;;;;;;;;;;;;;
+		NULL);
 
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);

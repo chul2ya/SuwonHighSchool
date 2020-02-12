@@ -2,7 +2,7 @@
 class Scene
 {
 	vector<Object*> addObjects;
-	vector<GameObject*> collisionObjects;
+	vector<Object*> collisionObjects;
 	vector<Object*> objects;
 public:
 
@@ -16,7 +16,7 @@ public:
 	virtual void Render();
 };
 
-class SceneManager 
+class SceneManager : public SingleInstance<SceneManager>
 {
 private:
 	static SceneManager* inst;
@@ -35,7 +35,7 @@ public:
 	}
 
 
-	void AddScnen(string name, Scene * scene) 
+	void AddScene(string name, Scene * scene) 
 	{
 		sceneMap.insert(make_pair(name, scene));
 	}

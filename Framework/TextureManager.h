@@ -7,21 +7,12 @@ public:
 	D3DXIMAGE_INFO Info;
 };
 
-class TextureManager
+class TextureManager : public SingleInstance<TextureManager>
 {
 private:
-	TextureManager() {};
-	static TextureManager* inst;
 	map<string, Texture*> texMaps;
 
 public:
-	static TextureManager* GetInstance()
-	{
-		if (!inst)
-			inst = new TextureManager();
-
-		return inst;
-	}
 
 	Texture * GetTexture(string pathWithName)
 	{

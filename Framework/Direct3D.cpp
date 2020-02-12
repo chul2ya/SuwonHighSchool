@@ -55,7 +55,7 @@ bool Direct3D::Initialize(HWND hWnd)
 	hr = D3DXCreateLine(pD3D9Device, &pLine);
 	if (FAILED(hr)) return false;
 
-	SceneManager::GetInstance()->AddScnen("Game", new GameScene);
+	//SceneManager::GetInstance()->AddScene("Game", new GameScene);
 	SceneManager::GetInstance()->ChangeScene("Game");
 
 	return true;

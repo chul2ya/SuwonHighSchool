@@ -14,7 +14,6 @@ public:
 	virtual void LateUpdate(float deltaTime) = 0;
 	virtual void Render();
 	virtual void SetCollision(Sprite* spr);
-	virtual void SetCollisionAngle(D3DXVECTOR2 center, float angle);
 };
 
 // asdf
