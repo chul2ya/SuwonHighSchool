@@ -1,0 +1,7 @@
+KyoKusanagi 100.0 0.0 
+KyoKusanagi 200.0 0.0 
+KyoKusanagi 300.0 0.0 
+KyoKusanagi 400.0 0.0 
+KyoKusanagi 500.0 0.0 
+KyoKusanagi 600.0 0.0 
+TerryBogard 0.0 0.0 

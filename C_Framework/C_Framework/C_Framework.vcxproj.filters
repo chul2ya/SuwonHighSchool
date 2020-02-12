@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GameScene">
+      <UniqueIdentifier>{a38e5a1f-f4a9-45c7-9e61-ffe11a5c43c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일">
+      <UniqueIdentifier>{f75bf972-90bb-43f0-8dc5-bb47659d6b8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일\Texture">
+      <UniqueIdentifier>{856acef8-9f67-4811-ab1c-50ee9094ac5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일\Object">
+      <UniqueIdentifier>{d4b134d1-760e-4ba5-83fd-cb9da72d0b0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일\Scene">
+      <UniqueIdentifier>{6a384f12-b1ea-499c-9f05-1c71b9100916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일\Character">
+      <UniqueIdentifier>{d28c624e-c38b-4645-93ec-6135ef807e4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일\Skill">
+      <UniqueIdentifier>{856c0102-8a82-482b-a954-1f42bcf8f360}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더파일">
+      <UniqueIdentifier>{44fcac9e-d719-4911-8199-2ac7dc2b6d3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일\Map">
+      <UniqueIdentifier>{fd289061-1751-4393-94c6-d5f1b72ff3a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameScene\GameObejct">
+      <UniqueIdentifier>{08df1f24-df35-47f6-a539-e668cf799301}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>소스파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Direct3D.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>소스파일\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>소스파일\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>소스파일\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillObject.cpp">
+      <Filter>소스파일\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="Skill.cpp">
+      <Filter>소스파일\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="Kick.cpp">
+      <Filter>소스파일\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>소스파일\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>소스파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomManager.cpp">
+      <Filter>소스파일\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObject.cpp">
+      <Filter>소스파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClCompile>
+    <ClCompile Include="HitEffect.cpp">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerManager.cpp">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClCompile>
+    <ClCompile Include="Portal.cpp">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameScene.h">
+      <Filter>GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>소스파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>소스파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Direct3D.h">
+      <Filter>소스파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>소스파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>소스파일\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Skill.h">
+      <Filter>소스파일\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Kick.h">
+      <Filter>소스파일\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>소스파일\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>소스파일\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillObject.h">
+      <Filter>소스파일\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>소스파일\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>소스파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomManager.h">
+      <Filter>소스파일\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObject.h">
+      <Filter>소스파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClInclude>
+    <ClInclude Include="HitEffect.h">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerManager.h">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClInclude>
+    <ClInclude Include="test.h">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClInclude>
+    <ClInclude Include="Portal.h">
+      <Filter>GameScene\GameObejct</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
