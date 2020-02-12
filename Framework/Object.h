@@ -16,3 +16,4 @@ public:
 	virtual void SetCollisionAngle(D3DXVECTOR2 center, float angle);
 };
 
+// asdf
