@@ -50,6 +50,10 @@
 #endif
 
 #pragma warning( disable : 4100 ) // disable unreference formal parameter warnings for /W4 builds
+#pragma warning( disable : 4458 )
+#pragma warning( disable : 4996 )
+
+#pragma comment (lib, "legacy_stdio_definitions.lib")
 
 // Enable extra D3D debugging in debug builds if using the debug DirectX runtime.  
 // This makes D3D objects work well in the debugger watch window, but slows down 
