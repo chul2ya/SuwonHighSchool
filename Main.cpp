@@ -3,8 +3,7 @@
 //
 // Copyright (c) Microsoft Corporation. All rights reserved.
 //--------------------------------------------------------------------------------------
-#include "DXUT.h"
-#include "resource.h"
+#include "Game.h"
 
 
 //--------------------------------------------------------------------------------------
@@ -29,6 +28,7 @@ bool CALLBACK IsD3D9DeviceAcceptable( D3DCAPS9* pCaps, D3DFORMAT AdapterFormat, 
 //--------------------------------------------------------------------------------------
 bool CALLBACK ModifyDeviceSettings( DXUTDeviceSettings* pDeviceSettings, void* pUserContext )
 {
+	pDeviceSettings->d3d9.pp.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
     return true;
 }
 
@@ -40,7 +40,8 @@ bool CALLBACK ModifyDeviceSettings( DXUTDeviceSettings* pDeviceSettings, void* p
 HRESULT CALLBACK OnD3D9CreateDevice( IDirect3DDevice9* pd3dDevice, const D3DSURFACE_DESC* pBackBufferSurfaceDesc,
                                      void* pUserContext )
 {
-    return S_OK;
+	GameUtil::GetInstance()->OnCreate();
+	return S_OK;
 }
 
 
@@ -51,7 +52,8 @@ HRESULT CALLBACK OnD3D9CreateDevice( IDirect3DDevice9* pd3dDevice, const D3DSURF
 HRESULT CALLBACK OnD3D9ResetDevice( IDirect3DDevice9* pd3dDevice, const D3DSURFACE_DESC* pBackBufferSurfaceDesc,
                                     void* pUserContext )
 {
-    return S_OK;
+	GameUtil::GetInstance()->OnReset();
+	return S_OK;
 }
 
 
@@ -76,6 +78,9 @@ void CALLBACK OnD3D9FrameRender( IDirect3DDevice9* pd3dDevice, double fTime, flo
     // Render the scene
     if( SUCCEEDED( pd3dDevice->BeginScene() ) )
     {
+		RECT rect = RECT{ 0, 0, 100, 100 };
+		GameUtil::GetInstance()->DrawRect(rect);
+		GameUtil::GetInstance()->DrawFont(L"한글을 테스트 하는 중입니다.");
         V( pd3dDevice->EndScene() );
     }
 }
@@ -96,6 +101,8 @@ LRESULT CALLBACK MsgProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam,
 //--------------------------------------------------------------------------------------
 void CALLBACK OnD3D9LostDevice( void* pUserContext )
 {
+	DXUTGetGlobalResourceCache().OnLostDevice();
+	GameUtil::GetInstance()->OnLost();
 }
 
 
@@ -104,6 +111,8 @@ void CALLBACK OnD3D9LostDevice( void* pUserContext )
 //--------------------------------------------------------------------------------------
 void CALLBACK OnD3D9DestroyDevice( void* pUserContext )
 {
+	DXUTGetGlobalResourceCache().OnDestroyDevice();
+	GameUtil::GetInstance()->OnDestroy();
 }
 
 
