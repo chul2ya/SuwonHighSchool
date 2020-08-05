@@ -94,11 +94,19 @@
     <ClInclude Include="GameUtil.h">
       <Filter>Game\Framework</Filter>
     </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Game\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Game\Framework</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="GameUtil.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
 </Project>

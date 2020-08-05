@@ -7,9 +7,6 @@ protected:
 
 	Singleton() {};
 
-	virtual void OnInit() = 0;
-	virtual void OnTerm() = 0;
-
 public:
 
 	static T* GetInstance()

@@ -78,9 +78,15 @@ void CALLBACK OnD3D9FrameRender( IDirect3DDevice9* pd3dDevice, double fTime, flo
     // Render the scene
     if( SUCCEEDED( pd3dDevice->BeginScene() ) )
     {
+		static Sprite sprite = Sprite(L"Assets/Sample/");
 		RECT rect = RECT{ 0, 0, 100, 100 };
 		GameUtil::GetInstance()->DrawRect(rect);
 		GameUtil::GetInstance()->DrawFont(L"한글을 테스트 하는 중입니다.");
+		auto sri = SpriteRenderInfo();
+		sri.mPosition = D3DXVECTOR2(640.0f, 0.0f);
+		sprite.Render(sri);
+		sprite.Render(SpriteRenderInfo());
+		sprite.Update(fElapsedTime);
         V( pd3dDevice->EndScene() );
     }
 }
@@ -101,7 +107,6 @@ LRESULT CALLBACK MsgProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam,
 //--------------------------------------------------------------------------------------
 void CALLBACK OnD3D9LostDevice( void* pUserContext )
 {
-	DXUTGetGlobalResourceCache().OnLostDevice();
 	GameUtil::GetInstance()->OnLost();
 }
 
@@ -111,8 +116,8 @@ void CALLBACK OnD3D9LostDevice( void* pUserContext )
 //--------------------------------------------------------------------------------------
 void CALLBACK OnD3D9DestroyDevice( void* pUserContext )
 {
-	DXUTGetGlobalResourceCache().OnDestroyDevice();
 	GameUtil::GetInstance()->OnDestroy();
+	delete GameUtil::GetInstance();
 }
 
 
@@ -144,7 +149,7 @@ INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int )
     DXUTSetHotkeyHandling( true, true, true );  // handle the default hotkeys
     DXUTSetCursorSettings( true, true ); // Show the cursor and clip it when in full screen
     DXUTCreateWindow( L"DXUTCustomFramework" );
-    DXUTCreateDevice( true, 640, 480 );
+    DXUTCreateDevice( true, 1280, 720 );
 
     // Start the render loop
     DXUTMainLoop();

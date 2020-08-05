@@ -1,5 +1,10 @@
 #include "Game.h"
 
+GameUtil::~GameUtil()
+{
+	delete TextureManager::GetInstance();
+}
+
 void GameUtil::OnCreate()
 {
 	auto device = DXUTGetD3D9Device();
@@ -15,6 +20,14 @@ void GameUtil::OnCreate()
 		assert(0);
 		return;
 	}
+	
+	if (FAILED(device->CreateVertexBuffer(sizeof(Vertex) * 4, 0, VertexFVF, D3DPOOL_MANAGED, &mSpriteVB, nullptr)))
+	{
+		assert(0);
+		return;
+	}
+
+	TextureManager::GetInstance()->OnCreate();
 
 	mLine->SetAntialias(true);
 	mLine->SetWidth(1.0f);
@@ -23,6 +36,9 @@ void GameUtil::OnCreate()
 void GameUtil::OnReset()
 {
 	auto device = DXUTGetD3D9Device();
+
+	mFont->OnResetDevice();
+	mLine->OnResetDevice();
 
 	D3DXMATRIX mat;
 	D3DXMatrixOrthoOffCenterLH(&mat, 0.0f, 1280.0f, 0.0f, 720.0f, 0.0f, 1.0f);
@@ -35,14 +51,28 @@ void GameUtil::OnReset()
 	D3DXMatrixLookAtLH(&view, &eye, &at, &up);
 	device->SetTransform(D3DTS_VIEW, &view);
 
-	mFont->OnResetDevice();
-	mLine->OnResetDevice();
+	device->SetRenderState(D3DRENDERSTATETYPE::D3DRS_ZENABLE, D3DZB_TRUE);
+	device->SetRenderState(D3DRENDERSTATETYPE::D3DRS_LIGHTING, FALSE);
+	device->SetRenderState(D3DRENDERSTATETYPE::D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+	device->SetRenderState(D3DRENDERSTATETYPE::D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+	device->SetRenderState(D3DRENDERSTATETYPE::D3DRS_CULLMODE, D3DCULL_NONE);
+	device->SetRenderState(D3DRENDERSTATETYPE::D3DRS_ALPHABLENDENABLE, TRUE);
+	device->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+	device->SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
+	device->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
+	device->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
+	device->SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
+	device->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
+
+	TextureManager::GetInstance()->OnReset();
 }
 
 void GameUtil::OnLost()
 {
 	mFont->OnLostDevice();
 	mLine->OnLostDevice();
+
+	TextureManager::GetInstance()->OnLost();
 }
 
 void GameUtil::OnDestroy()
@@ -51,6 +81,10 @@ void GameUtil::OnDestroy()
 	mFont = nullptr;
 	mLine->Release();
 	mLine = nullptr;
+	mSpriteVB->Release();
+	mSpriteVB = nullptr;
+
+	TextureManager::GetInstance()->OnDestroy();
 }
 
 void GameUtil::DrawRect(const RECT & rect)
