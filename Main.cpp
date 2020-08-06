@@ -41,6 +41,8 @@ HRESULT CALLBACK OnD3D9CreateDevice( IDirect3DDevice9* pd3dDevice, const D3DSURF
                                      void* pUserContext )
 {
 	GameUtil::GetInstance()->OnCreate();
+	SceneManager::GetInstance()->AddScene(L"GameScene", new GameScene());
+	SceneManager::GetInstance()->ChangeScene(L"GameScene");
 	return S_OK;
 }
 
@@ -62,6 +64,7 @@ HRESULT CALLBACK OnD3D9ResetDevice( IDirect3DDevice9* pd3dDevice, const D3DSURFA
 //--------------------------------------------------------------------------------------
 void CALLBACK OnFrameMove( double fTime, float fElapsedTime, void* pUserContext )
 {
+	SceneManager::GetInstance()->UpdateScene(fElapsedTime);
 }
 
 
@@ -78,15 +81,10 @@ void CALLBACK OnD3D9FrameRender( IDirect3DDevice9* pd3dDevice, double fTime, flo
     // Render the scene
     if( SUCCEEDED( pd3dDevice->BeginScene() ) )
     {
-		static Sprite sprite = Sprite(L"Assets/Sample/");
+		SceneManager::GetInstance()->RenderScene();
 		RECT rect = RECT{ 0, 0, 100, 100 };
 		GameUtil::GetInstance()->DrawRect(rect);
-		GameUtil::GetInstance()->DrawFont(L"한글을 테스트 하는 중입니다.");
-		auto sri = SpriteRenderInfo();
-		sri.mPosition = D3DXVECTOR2(640.0f, 0.0f);
-		sprite.Render(sri);
-		sprite.Render(SpriteRenderInfo());
-		sprite.Update(fElapsedTime);
+		GameUtil::GetInstance()->DrawTextFormat(L"FPS : %f, DeltaTime : %f", DXUTGetFPS(), DXUTGetElapsedTime());
         V( pd3dDevice->EndScene() );
     }
 }
@@ -118,6 +116,7 @@ void CALLBACK OnD3D9DestroyDevice( void* pUserContext )
 {
 	GameUtil::GetInstance()->OnDestroy();
 	delete GameUtil::GetInstance();
+	delete SceneManager::GetInstance();
 }
 
 

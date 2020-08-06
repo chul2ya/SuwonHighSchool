@@ -107,9 +107,17 @@ void GameUtil::DrawLine(const D3DXVECTOR2 & p1, const D3DXVECTOR2 & p2)
 	mLine->End();
 }
 
-void GameUtil::DrawFont(wstring str)
+void GameUtil::DrawTextFormat(const WCHAR* strMsg, ...)
 {
+	WCHAR strBuffer[512];
+
+	va_list args;
+	va_start(args, strMsg);
+	vswprintf_s(strBuffer, 512, strMsg, args);
+	strBuffer[511] = L'\0';
+	va_end(args);
+
 	RECT rect = { 0, 0, 0, 0 };
-	if (FAILED(mFont->DrawTextW(nullptr, str.c_str(), str.length(), &rect, DT_NOCLIP, D3DCOLOR_ARGB(255, 255, 255, 255))))
+	if (FAILED(mFont->DrawTextW(nullptr, strBuffer, -1, &rect, DT_NOCLIP, D3DCOLOR_ARGB(255, 255, 255, 255))))
 		assert(false);
 }

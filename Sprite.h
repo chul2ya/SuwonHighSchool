@@ -21,6 +21,7 @@ public:
 	float mAlpha = 1.0f, mRed = 1.0f, mGreen = 1.0f, mBlue = 1.0f;
 	int mScene = 0;
 
+	Sprite() {};
 	Sprite(wstring path);
 	void Update(float deltaTime);
 	void Render(const SpriteRenderInfo& info);

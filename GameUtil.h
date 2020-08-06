@@ -30,7 +30,7 @@ public:
 
 	void DrawRect(const RECT& rect);
 	void DrawLine(const D3DXVECTOR2& p1, const D3DXVECTOR2& p2);
-	void DrawFont(wstring str);
+	void DrawTextFormat(const WCHAR* strMsg, ...);
 
 	LPDIRECT3DVERTEXBUFFER9 GetSpriteVertexBuffer() { return mSpriteVB; }
 };

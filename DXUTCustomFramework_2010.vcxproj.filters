@@ -18,6 +18,12 @@
     <Filter Include="Game\Framework">
       <UniqueIdentifier>{3d623bfd-db21-4764-9f65-58cb9c4da2d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Entity">
+      <UniqueIdentifier>{facb0b9d-04c8-405e-bdcd-c75398958300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{d8d0ba16-625a-4f19-aeac-a4904fdd8234}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="DXUT\Optional\directx.ico">
@@ -100,6 +106,18 @@
     <ClInclude Include="Sprite.h">
       <Filter>Game\Framework</Filter>
     </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>Game\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Game\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Game\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -108,5 +126,9 @@
     <ClCompile Include="GameUtil.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="GameScene.cpp" />
   </ItemGroup>
 </Project>
